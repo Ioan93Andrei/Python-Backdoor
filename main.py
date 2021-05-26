@@ -19,8 +19,11 @@ def scan_port():
         status = s.connect_ex((target_ip, port))
         if(status == 0):
             print("Port",port, "is OPEN.")
+            break
         else:
             print("Port",port,"is CLOSED")
+
+#Scan for infomation about the machine and operating system
 
 def get_info():
     answer = input("Would you like to discover information about the machine? yes/no ")
@@ -32,9 +35,5 @@ def get_info():
 
 scan_port()
 get_info()
-
-#Scan for infomation about the machine and operating system
-
-
 
 #Browse the file system
