@@ -1,7 +1,6 @@
 import socket
 import os
 import platform
-from functions import *
 
 #Getting the target IP addresse and the ports to scan.
 target_ip = input("Please type in the target IP address: ")
@@ -22,15 +21,20 @@ def scan_port():
             print("Port",port, "is OPEN.")
         else:
             print("Port",port,"is CLOSED")
-            
-scan_port()
-    # answer = int(input("Type the port you would like to connect to: "))
-    # if(answer == status):
-    #     print("Connecting...")
-    # else:
-    #     print("Port is closed.")
 
+def get_info():
+    answer = input("Would you like to discover information about the machine? yes/no ")
+    if(answer == "yes"):
+        machine = platform.uname()
+        print(machine)
+    else:
+        print("Suit yourself.")
+
+scan_port()
+get_info()
 
 #Scan for infomation about the machine and operating system
+
+
 
 #Browse the file system
